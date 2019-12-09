@@ -47,6 +47,10 @@ http://localhost/tikiwiki-2.1/tiki-admin.php 308
 ```
 
 
+You have been provided a table of orgnanised data that describes taxi services in the city of Newyork. Given a certain period or hour of the day, determine the number of taxis in operation at the time. Here hour of the day is the period between the start of an hour and the last second of that hour e.g. from 12.00.00 to 12.59.59. Some taxi services can span more than one hour period. In that case, consider the operation in each different time period as unique operation.
+
+
+
 ### Task #2 ###
 Frequency of NYC taxi rides within a 1 hour window
 
