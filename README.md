@@ -30,8 +30,7 @@ Since option 1 is trivial, the belwo provided instructions are to help you work 
 
 In order to complete the tasks below, please fill the gaps code wise in the src/solutions package. Note: You can use Eclipse or any favorite Java IDE to accomplish those tasks.
 
-## Task #1 ##
-###Page view frequency###
+## Task #1 Page view frequency ##
 ### Problem Description ###
 You are provided with an apache log showing links that have been accessed by clients.
 The task is to create a MapReduce program that counts the total number of times a given url has been accessed.
@@ -47,8 +46,7 @@ http://localhost/tikiwiki-2.1/tiki-admin.php 308
 …
 ```
 
-### Task #2 ###
-###Frequency of NYC taxi rides within a 1 hour window###
+### Task #2 Frequency of NYC taxi rides within a 1 hour window ###
 ###Task Description###
 You have been provided csv data that describes taxi services in the city of Newyork.   
 For each hourly period, or hour, of the day, determine the number of taxis in operation during the period.  
