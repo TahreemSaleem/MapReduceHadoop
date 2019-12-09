@@ -20,12 +20,12 @@ Since option 1 is trivial, the belwo provided instructions are to help you work 
         will create a docker container which one could use to execute the code.   
         Ensure that the `./Source path` is where your code is.
         Enter the container by searching for it using `docker image ps` and then `docker attach 'image_id'`.   
-        * Execute ant runSolution1 or, ant runSolution2  and ant runAllSolutions to respectively do the apt named tasks.   
-        The output of the tasks should inform you of success or failure of the given solution.
+        * Execute *ant runSolution1* or, *ant runSolution2*  and/or *ant runAllSolutions* to respectively do the apt named tasks.   
+        The output of the tasks should inform you of success or failure of the given/your solution.
 
 **Noteworthy Points**
 1. Push your code to se-inf.gitlab whenever you make and commit changes.
-2. We run/evaluate your solutions everyday and you will be sent an email showing your score based on the output of your program.
+2. We run/evaluate your solutions everyday and you will be sent a link by email showing your score based on the output of your program.
 3. The tasks are described below
 
 In order to complete the tasks below, please fill the gaps code wise in the src/solutions package. Note: You can use Eclipse or any favorite Java IDE to accomplish those tasks.
