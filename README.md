@@ -12,14 +12,14 @@ Having done the aforementioned, there are two options of developing with the pro
 2. Using your favorite editor coupled with the Dockerfile in the toplevel directory
 Since option 1 is trivial, the belwo provided instructions are to help you work with the docker file.
 
-    a. Install docker in your machine
-    b. In the toplevel directory with the Dockefile, run 
-        *. `docker image build -t se_assignment:2 .` 
+    * Install docker in your machine
+    * In the toplevel directory with the Dockefile, run 
+        * `docker image build -t se_assignment:2 .` 
         the above command will build the image, download all the data needed for the assignment, run ant build command and then runAllExamples.
-        *. `docker run --privileged --rm -it -v `realpath ./Source`:/Source se_assignment:2  bash`
+        * `docker run --privileged --rm -it -v `realpath ./Source`:/Source se_assignment:2  bash`
         will create a docker container which one could use to execute the code. Ensure that the ./Source path is where your code is.
         Enter the container by searching for it using 'docker image ps' and the docker attach.
-        *. Execute ant runSolution1 or, ant runSolution2  and ant runAllSolutions to respectively do the apt named tasks.
+        * Execute ant runSolution1 or, ant runSolution2  and ant runAllSolutions to respectively do the apt named tasks.
         The output of the tasks should inform you of success or failure of the given solution.
 
 ** Noteworthy Points**
