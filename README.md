@@ -1,8 +1,35 @@
 # Systems Engineering - Assignment #2 #
 
+## Getting Started ##
+In order to participate and start working on this assignment, you should do the following:
+* Register on se-gitlab.inf.tu-dresden.de
+* Setup your account credentials (ssh-keys)
+* FORK the SE2W 2019 Assignment2
+* Clone the repository on your local machine
+
+There are two options of developing with the provided repository:
+1. Using the eclipse project file provided in the top-level directory
+2. Using your favorite editor coupled with the Dockerfile in the toplevel directory
+Since option 1 is trivial, the belwo provided instructions are to help you work with the docker file.
+3. Install docker in your machine
+4. In the toplevel directory with the Dockefile, run 
+    `docker image build -t se_assignment:2 .` 
+    the above command will build the image, download all the data needed for the assignment, run ant build command and then runAllExamples.
+   `docker run --privileged --rm -it -v `realpath ./Source`:/Source se_assignment:2  bash`
+   will create a docker container which one could use to execute the code. Ensure that the ./Source path is where your code is.
+   Enter the container by searching for it using 'docker image ps' and the docker attach.
+   Execute ant runSolution1 or, ant runSolution2  and ant runAllSolutions to respectively do the apt named tasks.
+   The output of the tasks should inform you of success or failure of the given solution.
+5. Push your code to se-inf.gitlab whenever you make and commit changes.
+6. We run/evaluate your solutions everyday and you will be sent an email showing your score based on the output of your program.
+7. The tasks are described below
+
 In order to complete the tasks below, please fill the gaps code wise in the src/solutions package. Note: You can use Eclipse or any favorite Java IDE to accomplish those tasks.
 
-### Task #1 ###
+## Task #1 ##
+### Problem Description ###
+You are provided with a log showing links that have been accessed by clients.
+The task is do a MapReduce program that 
 Page view frequency
 
 **Output:** URL → frequency
@@ -31,7 +58,7 @@ Frequency of NYC taxi rides within a 1 hour window
 …
 ```
 ### General Notes ###
-* Solutions must be turned in no later than **11:59pm AOE, 14th of Dec‘18!** No late days or other excuses.
+* Solutions must be turned in no later than **11:59pm AOE, 8th of Jan‘20!** No late days or other excuses.
 * Commit & PUSH!!! to your bitbucket repository before the deadline. Don't forget the push.
 * No team work. We check for plagarism and will let you fail if there is an indication given.
 * Ask questions at [auditorium](https://auditorium.inf.tu-dresden.de) if there are any.
