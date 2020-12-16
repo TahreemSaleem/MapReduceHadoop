@@ -8,5 +8,5 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 RUN useradd -ms /bin/bash ubuntu 
 COPY --chown=1000:1000 . /se2-w-2020-assignment2
 USER ubuntu
-WORKDIR /se2-w-2020-assignment2/
-RUN cd /se2-w-2020-assignment2/ && ant && ant runAllExamples
+ENV PATH $PATH:/usr/lib/jvm/java-8-openjdk-amd64/bin
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64

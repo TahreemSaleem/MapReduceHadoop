@@ -43,8 +43,7 @@ public class MapRedSolution1
         String md5 = org.apache.commons.codec.digest.DigestUtils.md5Hex(fileInputStream);
         fileInputStream.close();
         
-        String[] validMd5Sums = {"ca11be10a928d07204702b3f950fb353", "6a70a6176249b0f16bdaeee5996f74cb", 
-            "54893b270934b63a25cd0dcfd42fba64", "d947988bd6f35078131ce64db48dfad2", "3c3ded703f60e117d48c3c37e2830866"};
+        String[] validMd5Sums = {"af174f7148177b6ad68b7092bc9789f9","878ed82c762143aaf939797f6b02e781"};
         
         for (String validMd5 : validMd5Sums) 
         {
