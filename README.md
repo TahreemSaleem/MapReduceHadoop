@@ -4,13 +4,13 @@
 In order to participate and start working on this assignment, you should do the following:
 * Register on se-gitlab.inf.tu-dresden.de .
 * Setup your account credentials (ssh-keys).
-* **FORK** the SE2W 2019 Assignment2.
+* **FORK** the SE2W 2020 Assignment2.
 * Clone the repository on your local machine.
 
-Having done the aforementioned, there are two options of developing with the provided repository:
-1. Using the eclipse project file provided in the top-level directory
-2. Using your favorite editor coupled with the Dockerfile in the toplevel directory
-Since option 1 is trivial, the belwo provided instructions are to help you work with the docker file.
+Having done the aforementioned, there are two options of working with the provided repository:
+1. using the eclipse project file provided in the top-level directory or,
+2. using your favorite editor coupled with the Dockerfile in the toplevel directory
+Since option 1 is trivial, the below provided instructions are to help you work with the docker file.
 
     * Install docker in your machine
     * In the toplevel directory with the Dockefile, run 
