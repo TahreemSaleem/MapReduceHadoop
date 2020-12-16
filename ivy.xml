@@ -1,4 +1,4 @@
-<ivy-module version="2.0">
+<ivy-module version="2.4">
     <info organisation="se2" module="se2"/>
     <configurations defaultconfmapping="default">
     </configurations>
