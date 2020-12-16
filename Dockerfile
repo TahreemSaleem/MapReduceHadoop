@@ -5,8 +5,8 @@ RUN echo 2 | update-alternatives --config java
 RUN update-alternatives --display java
 ENV PATH $PATH:/usr/lib/jvm/java-8-openjdk-amd64/bin
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-RUN adduser -ms ubuntu /bin/bash
+RUN useradd -ms /bin/bash ubuntu 
+COPY --chown=1000:1000 . /se2-w-2020-assignment2
 USER ubuntu
-COPY . /se2-w-2020-assignment2
-WORKDIR /se2-w-2020-assignment2
-RUN ant init && ant runAllExamples
+WORKDIR /se2-w-2020-assignment2/
+RUN cd /se2-w-2020-assignment2/ && ant && ant runAllExamples
