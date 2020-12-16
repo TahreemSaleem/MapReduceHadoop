@@ -67,7 +67,7 @@ Some taxi services can span more than one hour period. In that case, consider th
 …
 ```
 ### General Notes ###
-* Solutions must be turned in no later than **11:59pm AOE, 8th of Jan‘20!** No late days or other excuses.
+* Solutions must be turned in no later than **11:59pm AOE, 5th of Jan‘21!** No late days or other excuses.
 * Commit & PUSH!!! to your bitbucket repository before the deadline. Don't forget the push.
 * No team work. We check for plagarism and will let you fail if there is an indication given.
 * Ask questions at [auditorium](https://auditorium.inf.tu-dresden.de) if there are any.
