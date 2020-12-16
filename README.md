@@ -19,8 +19,8 @@ Since option 1 is trivial, the below provided instructions are to help you work 
         * ``docker run --user 1000:1000 --rm -it -v `realpath ./se2-w-2019-assignment2`:/Source se_assignment:2  bash``   
         will create a docker container which one could use to execute the code.   
         * Navigate to /Source directory and execute `ant init` command.
-        * To run the provided examples, execute `ant runAllExamples' or runMapRedWordFrequencyCount for WordFrequencyCount example. The available targets can be seen in the build.xml file.
-        * Modify the source code in the solutions directory corresponding to task 1 or task 2
+        * To run the provided examples, execute `ant runAllExamples` or `runMapRedWordFrequencyCount` for WordFrequencyCount example. The available targets can be seen in the `build.xml` file.
+        * Modify the source code in the solutions directory corresponding to task 1 or task 2.
         * Execute `ant runMapSolution1` or, `ant runMapSolution2`  and/or `ant runAllSolutions` to test the solution you have developed.   
         The output of the tasks should inform you of success or failure of the given/your solution.
 
