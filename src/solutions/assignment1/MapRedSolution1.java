@@ -1,20 +1,70 @@
 package solutions.assignment1;
 
-import java.io.File;
-import java.io.FileInputStream;
-
+import examples.MapRedFileUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-import examples.MapRedFileUtils;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MapRedSolution1
 {
-    /* your code goes in here*/
+    public static class MapRecords extends Mapper<LongWritable, Text, Text, IntWritable>
+    {
+        private final static IntWritable one = new IntWritable(1);
+        private Text url = new Text();
+
+        @Override
+        protected void map(LongWritable key, Text value, Context context)
+                throws IOException, InterruptedException
+        {
+            String line = value.toString();
+            Pattern pattern = Pattern.compile(" \"(\\S+) (\\S+)\\s*(\\S+)?\\\"", Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(line);
+            boolean matchFound = matcher.find();
+            if(matchFound) {
+                String matched = matcher.group(2);
+                if (!matched.startsWith("http")) {
+                    matched = "http://localhost" + matched;
+                }
+                url.set(matched);
+                context.write(url, one);
+
+            }
+        }
+    }
+
+    public static class ReduceRecords extends Reducer<Text, IntWritable, Text, IntWritable>
+    {
+        private IntWritable result = new IntWritable();
+
+        @Override
+        protected void reduce(Text key, Iterable<IntWritable> values,
+                              Context context) throws IOException, InterruptedException
+        {
+            int sum = 0;
+
+            for (IntWritable val : values)
+                sum += val.get();
+
+            result.set(sum);
+            context.write(key, result);
+        }
+    }
+
     
     public static void main(String[] args) throws Exception
     {
@@ -30,9 +80,16 @@ public class MapRedSolution1
         }
         
         Job job = Job.getInstance(conf, "MapRed Solution #1");
-        
-        /* your code goes in here*/
-        
+
+        job.setInputFormatClass(TextInputFormat.class);
+
+        job.setMapperClass(MapRecords.class);
+        job.setCombinerClass(ReduceRecords.class);
+        job.setReducerClass(ReduceRecords.class);
+
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
         FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
         FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
         
