@@ -32,7 +32,7 @@ public class MapRedSolution1
                 throws IOException, InterruptedException
         {
             String line = value.toString();
-            Pattern pattern = Pattern.compile(" \"(\\S+) (\\S+)\\s*(\\S+)?\\\"", Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile(" \"(\\S+) (\\S+)\\s*(\\S+)?\"", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(line);
             boolean matchFound = matcher.find();
             if(matchFound) {
